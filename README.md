@@ -1,0 +1,3 @@
+额 因为自己想用lua版本就fork了份修着用
+init.d里的脚本抄的大雕的
+lua model里仿照js版本写的
