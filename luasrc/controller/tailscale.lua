@@ -15,10 +15,12 @@ end
 
 function act_status()
         local e = {}
-        e.running = luci.sys.call("pgrep /usr/sbin/tailscaled >/dev/null") == 0
+        local text = luci.util.ubus("service", "list")
+        e.running = text.tailscale.instances.instance1.running
         luci.http.prepare_content("application/json")
         luci.http.write_json(e)
 end
+
 
 function status_detail()
         local json = require "luci.jsonc"
