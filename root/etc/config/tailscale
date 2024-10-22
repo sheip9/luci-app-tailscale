@@ -1,2 +1,2 @@
 config tailscale 'settings'
-	option enable '0'
+	option enabled '0'
