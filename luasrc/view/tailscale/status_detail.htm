@@ -1,0 +1,21 @@
+<script type="text/javascript">//<![CDATA[
+  XHR.poll(3, '<%=url([[admin]], [[vpn]], [[tailscale]], [[status_detail]])%>', null,
+    function(x, data) {
+        var tb = document.getElementById('tailscale_status_detail');
+        if (data.BackendState == "NeedsLogin") {
+                tb.innerHTML = "<a style=\"color: green;\"  "          + "href=\" "  +  data.AuthURL + "\""    +   " >Nee
+        }else {
+                tb.innerHTML = "<a style=\"color: green;\">Running</a>";
+        }
+
+    }
+  );
+
+  </script>
+  <style>.mar-10 {margin-left: 50px; margin-right: 10px;}</style>
+<div class="cbi-value cbi-value-last">
+                    <label class="cbi-value-title">............</label>
+                    <div class="cbi-value-field">
+                        <p id="tailscale_status_detail"></p>
+                    </div>
+                </div>
