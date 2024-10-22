@@ -1,5 +1,5 @@
-
 module("luci.controller.tailscale", package.seeall)
+require("luci.util")
 
 function index()
         if not nixio.fs.access("/etc/config/tailscale") then
