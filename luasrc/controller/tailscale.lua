@@ -16,8 +16,13 @@ end
 function act_status()
         local e = {}
         local text = luci.util.ubus("service", "list")
-        e.running = text.tailscale.instances.instance1.running
         luci.http.prepare_content("application/json")
+        if text.tailscale.instances == nil then
+                e.running = false
+                luci.http.write_json(e)
+                return
+        end
+        e.running = text.tailscale.instances.instance1.running
         luci.http.write_json(e)
 end
 
