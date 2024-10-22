@@ -4,7 +4,7 @@ a.description = translate("Tailscale connects your team's devices and developmen
 
 a:section(SimpleSection).template  = "tailscale/tailscale_status"    
 
-t = a:section(TypedSection, "tailscale", "status")
+t = a:section(TypedSection, "tailscale")
 t.anonymous = true
 t.addremove = false
 
